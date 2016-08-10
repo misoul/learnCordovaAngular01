@@ -5,3 +5,5 @@ plugins\/*
 
 platforms/*
 platforms\/*
+
+bower_components\/*
