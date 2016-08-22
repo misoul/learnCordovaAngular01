@@ -2,6 +2,12 @@
 
 Source: https://github.com/mario-aleo/cordova-angular-angularMaterial-seed
 
+## Command Summary
+- Common cordova/phonecat commands: see package.json.
+- Run server: node ./server.js, then navigate to localhost:3000
+
+## Main
+
 A seed for projects using Cordova + AngularJS + Angular-Material
 (Note: this isn't an Ionic Framework Seed)
 
