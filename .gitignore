@@ -6,4 +6,5 @@ plugins\/*
 platforms/*
 platforms\/*
 
-bower_components\/*
+www/assets/bower_components\/*
+node_modules/*
