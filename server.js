@@ -19,7 +19,8 @@ employeeDAO.initConnection(registerRouteEmployees); // Passing callbacks twice j
 app.get('/phones/phones.json', phoneDAO.findAll);
 app.get('/phones/:phoneId', phoneDAO.get);
 app.use('/', express.static(__dirname + '/www'));
-// app.use('/img/phones', express.static(__dirname + '/app/img/phones'));
+// app.use('/assets', express.static(__dirname + '/server/assets'))
+app.use('/img/phones', express.static(__dirname + '/server/assets/img/phones'));
 // app.use('/app', express.static(__dirname + '/app'));
 
 

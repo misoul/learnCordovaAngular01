@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <p> Search3: <input ng-model="phoneList.query" /> </p>
+
+      <p> Sort by:
+        <select ng-model="phoneList.orderProp">
+          <option value="name">Alphabetical</option>
+          <option value="age">Newest</option>
+        </select>
+      </p>
+    </div>
+
+    <div class="col-md-10">
+      <ul class="phones">
+
+        <li ng-repeat="phone in phoneList.phones | filter:phoneList.query | orderBy:phoneList.orderProp"
+            class="thumbnail phone-list-item">
+          <a href="#!/phones/{{phone.id}}" class="thumb">
+            <img ng-src="{{phone.imageUrl}}" alt="{{phone.name}}" />
+          </a>
+          <a href="#!/phones/{{phone.id}}">{{phone.name}}</a>
+          <p>{{phone.snippet}}</p>
+          <!-- <p ng-mouseover=fullSnippet()>{{phone.snippet | limitTo:30}}</p> -->
+          <!-- <div ng-cloak>
+            <md-button class="md-icon-button" aria-label="refresh">
+              <md-tooltip md-direction="left">{{phone.snippet | limitTo:20}}</md-tooltip>
+              <md-icon md-svg-src="img/button.svg" style="width: 24px; height: 24px;">
+              </md-icon>
+            </md-button> -->
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

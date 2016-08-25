@@ -21,6 +21,14 @@
       <md-icon style="padding-right: 16px; color: #000000">settings_ethernet</md-icon>
       <p>Angular Material</p>
     </md-list-item>
+    <md-list-item ng-click="main.getPhoneList()">
+      <md-icon style="padding-right: 16px; color: #000000">smartphone</md-icon>
+      <p>Phone Listing</p>
+    </md-list-item>
+    <md-list-item ng-href="/example">
+      <md-icon style="padding-right: 16px; color: #000000">blur_on</md-icon>
+      <p>Phone Listing</p>
+    </md-list-item>
   </md-list>
 </md-sidenav>
 
@@ -38,7 +46,13 @@
         <md-icon style="color: #000000">book</md-icon>
       </md-button>
       <md-button class="md-icon-button" aria-label="Creator" ng-href="https://github.com/mario-aleo">
-        <md-icon style="color: #000000">favorite</md-icon>
+        <md-icon style="color: #000010">favorite</md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="Creator" ng-click="main.getPhoneList()">
+        <md-icon style="color: #000020">smartphone</md-icon>
+      </md-button>
+      <md-button class="md-icon-button" aria-label="Creator" ui-sref="example">
+        <md-icon style="color: #000030">blur_on</md-icon>
       </md-button>
     </div>
   </md-whiteframe>
