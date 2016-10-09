@@ -1,27 +1,31 @@
 'use strict';
 
-exports.findById = function(req, res) {
-  var id = parseInt(req.params.id);
-  console.log('findById: ' + id + ", params: " + req.params.id);
-  res.jsonp(employees.find(function(employee){return employee.id == id}));
-};
-
-exports.findByManager = function(req, res) {
-  var id = parseInt(req.params.id);
-  console.log('findByManager: ' + id);
-  res.jsonp(employees.filter(function(employee) {return employee.managerId == id}));
-};
-
-exports.findAll = function(req, res) {
-  console.log(req.params);
-  var name = req.query["name"];
-  if (name) {
-    res.jsonp(employees.filter(function(employee){return employee.id > 10;})); //TODO: Implement RegExp on 'name'
-  } else {
-    console.log("HERE");
-    res.jsonp(employees);
+exports.initConnection = function(registerFunc) {
+  var findById = function(req, res) {
+    var id = parseInt(req.params.id);
+    console.log('findById: ' + id + ", params: " + req.params.id);
+    res.jsonp(employees.find(function(employee){return employee.id == id}));
   };
-};
+
+  var findByManager = function(req, res) {
+    var id = parseInt(req.params.id);
+    console.log('findByManager: ' + id);
+    res.jsonp(employees.filter(function(employee) {return employee.managerId == id}));
+  };
+
+  var findAll = function(req, res) {
+    console.log(req.params);
+    var name = req.query["name"];
+    if (name) {
+      res.jsonp(employees.filter(function(employee){return employee.id > 10;})); //TODO: Implement RegExp on 'name'
+    } else {
+      res.jsonp(employees);
+    };
+  };
+
+  registerFunc( {findByManager, findById, findAll} )
+}
+
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 // Populate database with sample data -- Only used once: the first time the application is started.
